@@ -7,14 +7,15 @@
 #include <vector>
 #define INF -1
 using namespace std;
+
 class Grafo
 {
 private:
-	vector<list<pair<int, int>>> adj_list;
-	int tamanho;
+	int V;
+	list<pair<int, int>> *adj_list;
 	No* vertices;
 public:
-	Grafo(int tamanho);
+	Grafo(int V);
 	void criaAdjacente(int x, int y, int _peso);
 	void imprimeGrafo();
 	void removeAdjacencia(int x, int y);

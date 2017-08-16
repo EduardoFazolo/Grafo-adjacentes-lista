@@ -1,25 +1,27 @@
 #include "Grafo.h"
 
-Grafo::Grafo(int tamanho) {
-	//tamanho = adj_list.size();
-	adj_list.resize(tamanho);
+Grafo::Grafo(int V) {
+	this->V = V;
+	adj_list = new list<pair<int, int>>[V];
 }
 
 void Grafo::criaAdjacente(int x, int y, int _peso)
 {
-	list<int, int> l;
-	//adj_list.insert(adj_list.begin + x, list<y,_peso>)
-	adj_list.at(x) = adj_list.insert(make_pair(y, _peso));
+	adj_list[x].push_back(make_pair(y,_peso));
 }
 
 void Grafo::imprimeGrafo()
 {
-	//vector<pair<int, int>>::iterator i;
+	list<pair<int, int>>::iterator it;
 
-	for (int i = 0; i < adj_list.size(); i++)
-	{
-			cout << adj_list[i].first << ", " << adj_list[i].second;
+	for (int i = 0;  i < V; i++) {
+		for (it = adj_list[i].begin(); it != adj_list[i].end(); it++)
+		{
+			cout <<  it->first << ", " << it->second << " ";
+		}
+		cout << endl;
 	}
+	
 }
 
 //void Grafo::removeAdjacencia(int x, int y)

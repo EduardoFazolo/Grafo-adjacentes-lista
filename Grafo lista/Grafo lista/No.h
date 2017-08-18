@@ -6,6 +6,8 @@ private:
 	std::string nome;
 public:
 	No();
+	No(std::string nome);
+	std::string mostraNome();
 	~No();
 };
 

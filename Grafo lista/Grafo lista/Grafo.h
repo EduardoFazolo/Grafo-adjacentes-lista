@@ -11,14 +11,14 @@ using namespace std;
 class Grafo
 {
 private:
-	int V;
+	int tamanho;
 	list<pair<int, int>> *adj_list;
 	No* vertices;
 public:
 	Grafo(int V);
 	void criaAdjacente(int x, int y, int _peso);
 	void imprimeGrafo();
-	void removeAdjacencia(int x, int y);
+	void removeAdjacencia(int x, int y, int _peso);
 	void setaInformacao(int i, std::string _nome);
 	void imprimeVertices();
 	int retAdjacentes(int x, int* _adjacentes);

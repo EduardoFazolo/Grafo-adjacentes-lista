@@ -3,6 +3,7 @@
 Grafo::Grafo(int V) {
 	this->tamanho = V;
 	adj_list = new list<pair<int, int>>[tamanho];
+	vertices = new No[tamanho];
 }
 
 void Grafo::criaAdjacente(int x, int y, int _peso)
@@ -29,10 +30,15 @@ void Grafo::removeAdjacencia(int x, int y, int _peso)
 	adj_list[x].remove(make_pair(y, _peso));
 }
 
-void Grafo::setaInformacao(int i, std::string _nome)
+void Grafo::setaInformacao(int i, string _nome)
 {
-	No* no = new No(_nome);
-	vertices[i] = *no;
+	if (i < tamanho) {
+		No* no = new No(_nome);
+		vertices[i] = *no;
+	}
+	else {
+		cout << "Erro, vertice invalido" << endl;
+	}
 }
 
 void Grafo::imprimeVertices()

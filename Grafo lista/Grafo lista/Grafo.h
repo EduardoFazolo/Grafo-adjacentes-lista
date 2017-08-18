@@ -19,7 +19,7 @@ public:
 	void criaAdjacente(int x, int y, int _peso);
 	void imprimeGrafo();
 	void removeAdjacencia(int x, int y, int _peso);
-	void setaInformacao(int i, std::string _nome);
+	void setaInformacao(int i, string _nome);
 	void imprimeVertices();
 	int retAdjacentes(int x, int* _adjacentes);
 	~Grafo();

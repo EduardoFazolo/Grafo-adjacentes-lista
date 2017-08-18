@@ -11,6 +11,7 @@ int main() {
 	g->criaAdjacente(2, 1, 35);
 	g->criaAdjacente(2, 2, 35);
 	g->criaAdjacente(1, 0, 20);
+	
 	g->removeAdjacencia(2,1, 35);
 	
 	cout << "Numero de adj:" <<  g->retAdjacentes(2, v) << endl;
@@ -20,6 +21,9 @@ int main() {
 	{
 		cout << v[i] << " ";
 	}
+	
+	cout << endl;
+	g->setaInformacao(3, "Joao");
 	cout << endl;
 	
 	g->imprimeGrafo();
